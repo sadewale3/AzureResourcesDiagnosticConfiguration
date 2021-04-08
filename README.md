@@ -6,6 +6,6 @@ https://docs.microsoft.com/en-us/azure/storage/blobs/monitor-blob-storage?tabs=a
 ## How to Run
 
 ### CloudShell (Powershell):
-* ./azure_BlobService_diagnosticSetting.ps1 <Azure Log Analytics Sentinel Workspace ID>
+* ./azure_BlobService_diagnosticSetting.ps1 `<Azure Log Analytics Sentinel Workspace ID>`
 * For Example:
   * ./azure_BlobService_diagnosticSetting.ps1 gitg/subscriptions/`<SubscriptionID>`/resourcegroups/`<ResourceGroupName>`/providers/microsoft.operationalinsights/workspaces/`<LogAnalyticsWorkspacename>`
