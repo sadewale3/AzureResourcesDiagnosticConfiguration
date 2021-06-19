@@ -1,6 +1,12 @@
-$logAnalyticsName = $args[0]
-$logAnalyticsRG = $args[1]
+$logAnalyticsName = Read-Host -Prompt 'Please provide name of Log Analytics Workspace'
+$logAnalyticsRG = Read-Host -Prompt 'Please provide resource group of Log Analytics Workspace'
+$logAnalyticsSubscription = Read-Host -Prompt 'Please provide subscription ID of Log Analytics Workspace'
+$contextName = "lawscontext"
+
+Set-AzContext -Name $contextName -Subscription $logAnalyticsSubscription -Force
 $logAnalyticsResource = Get-AzOperationalInsightsWorkspace -Name $logAnalyticsName -ResourceGroupName $logAnalyticsRG
+Remove-AzContext -Name $contextName -Force
+
 $pubiPList = Get-AzPublicIpAddress
 
 foreach ($pubipItem in $pubipList){
